@@ -8,12 +8,11 @@ public class HealthSystem : ComponentSystem
 
     protected override void OnUpdate()
     {
-        Debug.Log(DataInstance.Length);
         List<GameObject> toDestroy = new List<GameObject>();
         
         for (int i = 0; i < DataInstance.Length; i++)
         {
-            if (DataInstance.Healths[i].Value.Health <= 0)
+            if (DataInstance.Healths[i].Health <= 0)
             {
                 toDestroy.Add(DataInstance.GameObjectArray[i]);
             }
@@ -29,6 +28,6 @@ public class HealthSystem : ComponentSystem
     {
         public readonly int Length;
         public GameObjectArray GameObjectArray;
-        public ComponentArray<HealthDataComponent> Healths;
+        public ComponentDataArray<HealthData> Healths;
     }
 }
