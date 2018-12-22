@@ -724,56 +724,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Grid: {fileID: 1421512998}
   MartixModel:
-    MatrixSize: {x: 4, y: 4}
+    MatrixSize: {x: 2, y: 2}
     Cells:
     - MartixIndex: {x: 0, y: 0}
-      Value: 0
+      Value: 1
       WorldPosition: {x: 0, y: 0, z: 0}
     - MartixIndex: {x: 0, y: 1}
-      Value: 0
+      Value: 1
       WorldPosition: {x: 0, y: 1, z: 0}
-    - MartixIndex: {x: 0, y: 2}
-      Value: 0
-      WorldPosition: {x: 0, y: 2, z: 0}
-    - MartixIndex: {x: 0, y: 3}
-      Value: 0
-      WorldPosition: {x: 0, y: 3, z: 0}
     - MartixIndex: {x: 1, y: 0}
-      Value: 0
+      Value: 1
       WorldPosition: {x: 1, y: 0, z: 0}
     - MartixIndex: {x: 1, y: 1}
-      Value: 0
+      Value: 1
       WorldPosition: {x: 1, y: 1, z: 0}
-    - MartixIndex: {x: 1, y: 2}
-      Value: 0
-      WorldPosition: {x: 1, y: 2, z: 0}
-    - MartixIndex: {x: 1, y: 3}
-      Value: 0
-      WorldPosition: {x: 1, y: 3, z: 0}
-    - MartixIndex: {x: 2, y: 0}
-      Value: 0
-      WorldPosition: {x: 2, y: 0, z: 0}
-    - MartixIndex: {x: 2, y: 1}
-      Value: 0
-      WorldPosition: {x: 2, y: 1, z: 0}
-    - MartixIndex: {x: 2, y: 2}
-      Value: 0
-      WorldPosition: {x: 2, y: 2, z: 0}
-    - MartixIndex: {x: 2, y: 3}
-      Value: 0
-      WorldPosition: {x: 2, y: 3, z: 0}
-    - MartixIndex: {x: 3, y: 0}
-      Value: 0
-      WorldPosition: {x: 3, y: 0, z: 0}
-    - MartixIndex: {x: 3, y: 1}
-      Value: 0
-      WorldPosition: {x: 3, y: 1, z: 0}
-    - MartixIndex: {x: 3, y: 2}
-      Value: 0
-      WorldPosition: {x: 3, y: 2, z: 0}
-    - MartixIndex: {x: 3, y: 3}
-      Value: 0
-      WorldPosition: {x: 3, y: 3, z: 0}
 --- !u!4 &1761499359
 Transform:
   m_ObjectHideFlags: 0
