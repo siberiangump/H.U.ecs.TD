@@ -26,7 +26,7 @@ public class Map : MonoBehaviour
             return;
         foreach (MatrixModel.CellData item in MartixModel.Cells)
         {
-            Gizmos.color = item.Value == MatrixModel.CellValue.Free ? Color.green : Color.red;
+            Gizmos.color = item.Value == CellValue.Free ? Color.green : Color.red;
             Gizmos.DrawSphere(item.WorldPosition + this.transform.position, .2f);
         }
     }
