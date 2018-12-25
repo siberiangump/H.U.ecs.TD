@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
-using TMPro;
 
 public class GroupToolWindow: EditorWindow
 {
@@ -112,10 +111,10 @@ public class GroupToolWindow: EditorWindow
 
     public void SetTMProText(GameObject target, string text)
     {
-        TextMeshPro tmObject = target.GetComponent<TextMeshPro>();
-        if(tmObject == null)
-            return;
-        tmObject.text = text;
+        //TextMeshPro tmObject = target.GetComponent<TextMeshPro>();
+        //if(tmObject == null)
+        //    return;
+        //tmObject.text = text;
     }
 
     [System.Serializable]

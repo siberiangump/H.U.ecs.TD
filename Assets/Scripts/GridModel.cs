@@ -1,23 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
 [System.Serializable]
-public class GridModel : MonoBehaviour
+public class GridModel
 {
-    [SerializeField] GridData GridSettings;
+    private float ColumsDisplacment;
+    private float RowsDisplacment;
+
+    public GridModel(float columsDisplacment, float rowsDisplacement)
+    {
+        ColumsDisplacment = columsDisplacment;
+        RowsDisplacment = rowsDisplacement;
+    }
 
     public Vector3 GetDisplacement(Vector2Int index)
     {
         Vector3 value = new Vector3();
-        value.x = Mathf.RoundToInt(index.x * GridSettings.ColumsDisplacment);
-        value.y = Mathf.RoundToInt(index.y * GridSettings.RowsDisplacment);
+        value.x = Mathf.RoundToInt(index.x * ColumsDisplacment);
+        value.y = Mathf.RoundToInt(index.y * ColumsDisplacment);
         return value;
-    }
-
-    [System.Serializable]
-    public class GridData
-    {
-        public float RowsDisplacment = 1;
-        public float ColumsDisplacment = 1;
     }
 }
