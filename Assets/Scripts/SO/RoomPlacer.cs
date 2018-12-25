@@ -8,9 +8,9 @@ namespace Assets.Scripts.SO
     {
         [SerializeField] private Item[] RoomItems;
 
-        private MartixModel Map;
+        private MatrixModel Map;
 
-        public void ReciveMap(MartixModel martixModel)
+        public void ReciveMap(MatrixModel martixModel)
         {
             Map = martixModel;
         }

@@ -4,7 +4,7 @@ using Assets.Scripts;
 
 public class Map : MonoBehaviour
 {     
-    [SerializeField] public MartixModel MartixModel;
+    [SerializeField] public MatrixModel MartixModel;
     [SerializeField] private GridSettings Settings;
 
     private GridModel Grid;
@@ -24,9 +24,9 @@ public class Map : MonoBehaviour
     {
         if (MartixModel == null || MartixModel.Cells == null)
             return;
-        foreach (MartixModel.CellData item in MartixModel.Cells)
+        foreach (MatrixModel.CellData item in MartixModel.Cells)
         {
-            Gizmos.color = item.Value == MartixModel.CellValue.Free ? Color.green : Color.red;
+            Gizmos.color = item.Value == MatrixModel.CellValue.Free ? Color.green : Color.red;
             Gizmos.DrawSphere(item.WorldPosition + this.transform.position, .2f);
         }
     }

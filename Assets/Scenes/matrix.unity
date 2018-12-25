@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-    m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -140,10 +139,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 948804119e4e5ec4faf5c3bd1019a5d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a90f9ba7f105ff459c0c28f7c6b0731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GridSettings:
+  Settings:
     RowsDisplacment: 1
     ColumsDisplacment: 1
 --- !u!4 &1421512999
@@ -190,7 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8152148f606cad94990227bdf96cde2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grid: {fileID: 1421512998}
   MartixModel:
     MatrixSize: {x: 10, y: 10}
     Cells:
@@ -494,6 +492,7 @@ MonoBehaviour:
     - MartixIndex: {x: 9, y: 9}
       Value: 0
       WorldPosition: {x: 9, y: 9, z: 0}
+  Settings: {fileID: 1421512998}
 --- !u!4 &1482037531
 Transform:
   m_ObjectHideFlags: 0
@@ -564,10 +563,9 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
+  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -624,6 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeTrigger: {fileID: 1687258585}
   volumeLayer:
+    serializedVersion: 2
     m_Bits: 256
   stopNaNPropagation: 1
   antialiasingMode: 1
@@ -632,10 +631,6 @@ MonoBehaviour:
     sharpness: 0.25
     stationaryBlending: 0.95
     motionBlending: 0.85
-    <jitter>k__BackingField: {x: 0, y: 0}
-    m_ResetHistory: 1
-    <sampleIndex>k__BackingField: 0
-    m_HistoryPingPong: 0000000000000000
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
@@ -644,36 +639,21 @@ MonoBehaviour:
   fog:
     enabled: 1
     excludeSkybox: 1
-  dithering:
-    m_NoiseTextureIndex: 0
   debugLayer:
     lightMeter:
-      <output>k__BackingField: {fileID: 0}
-      requested: 0
       width: 512
       height: 256
       showCurves: 1
     histogram:
-      <output>k__BackingField: {fileID: 0}
-      requested: 0
       width: 512
       height: 256
       channel: 3
     waveform:
-      <output>k__BackingField: {fileID: 0}
-      requested: 0
       exposure: 0.12
       height: 256
     vectorscope:
-      <output>k__BackingField: {fileID: 0}
-      requested: 0
       size: 256
       exposure: 0.12
-    frameWidth: 0
-    frameHeight: 0
-    <debugOverlayTarget>k__BackingField: {fileID: 0}
-    <debugOverlayActive>k__BackingField: 0
-    <debugOverlay>k__BackingField: 0
     overlaySettings:
       linearDepth: 0
       motionColorIntensity: 4
@@ -687,11 +667,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
-  <haveBundlesBeenInited>k__BackingField: 0
-  m_Camera: {fileID: 1687258584}
-  m_SettingsUpdateNeeded: 1
-  m_IsRenderingInSceneView: 0
-  m_NaNKilled: 0
 --- !u!1 &1761499357
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8152148f606cad94990227bdf96cde2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grid: {fileID: 1421512998}
   MartixModel:
     MatrixSize: {x: 2, y: 2}
     Cells:
@@ -738,6 +712,7 @@ MonoBehaviour:
     - MartixIndex: {x: 1, y: 1}
       Value: 1
       WorldPosition: {x: 1, y: 1, z: 0}
+  Settings: {fileID: 1421512998}
 --- !u!4 &1761499359
 Transform:
   m_ObjectHideFlags: 0

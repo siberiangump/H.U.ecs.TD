@@ -3,11 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class MartixModel
+public class MatrixModel
 {
     GridModel Grid;
     public Vector2Int MatrixSize;
     public List<CellData> Cells = new List<CellData>();
+
+    public MatrixModel(Vector2Int matrixSize, GridModel gridModel)
+    {
+        MatrixSize = matrixSize;
+        Init(gridModel);
+    }
 
     public void Init(GridModel grid)
     {
@@ -16,7 +22,7 @@ public class MartixModel
         {
             for (int y = 0; y < MatrixSize.y; y++)
             {
-                Cells.Add(InitCell(x,y));
+                Cells.Add(InitCell(x, y));
             }
         }
     }
@@ -32,13 +38,23 @@ public class MartixModel
         };
     }
 
+    private CellData GetCellData(Vector2Int matrixIndex)
+    {
+        foreach (CellData cell in Cells)
+        {
+            if (matrixIndex == cell.MartixIndex)
+                return cell;
+        }
+        return null;
+    } 
+
     [System.Serializable]
-    public struct CellData
+    public class CellData
     {
         public Vector2Int MartixIndex;
         public CellValue Value;
         public Vector3 WorldPosition;
-    }
-
-    public enum CellValue {Free, Taken}
+    }    
 }
+
+public enum CellValue { Free, Taken, Room }
