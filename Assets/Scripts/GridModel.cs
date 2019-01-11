@@ -18,7 +18,7 @@ public class GridModel
     {
         Vector3 value = new Vector3();
         value.x = Mathf.RoundToInt(index.x * ColumsDisplacment);
-        value.y = Mathf.RoundToInt(index.y * ColumsDisplacment);
+        value.z = Mathf.RoundToInt(index.y * ColumsDisplacment);
         return value;
     }
 }

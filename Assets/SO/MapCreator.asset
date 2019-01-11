@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: fbaf90ff2cd64614d867ede11fd2dc12, type: 3}
+  m_Name: MapCreator
+  m_EditorClassIdentifier: 
+  MapHolderObj: {fileID: 11400000, guid: 6a9eef795d9348442ba1ce40f7858c6a, type: 2}
+  TilePrefabs:
+  - Value: 2
+    TilePrefab: {fileID: 4230409779693922288, guid: 45b7ba6586dc21b43950daac990b79db,
+      type: 3}
+  - Value: 3
+    TilePrefab: {fileID: 3402986153453761077, guid: df29c6c4bd32abf40851ccea5307e178,
+      type: 3}

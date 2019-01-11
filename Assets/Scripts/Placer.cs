@@ -3,13 +3,15 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class RoomPlacer
+    public class Placer
     {
         private MatrixModel Map;
+        private CellValue CellValue;
 
-        public RoomPlacer(MatrixModel matrix)
+        public Placer(MatrixModel matrix, CellValue cellData)
         {
             Map = matrix;
+            CellValue = cellData;
         }
 
         public bool TryPlace(MatrixModel room, Vector2Int matrixPos)
@@ -25,7 +27,7 @@ namespace Assets.Scripts
             foreach (Vector2Int point in roomPoints)
             {
                 CellData cellData = Map.GetCellData(point);
-                cellData.Value = CellValue.Room;
+                cellData.Value = CellValue;
             }
 
             return true;

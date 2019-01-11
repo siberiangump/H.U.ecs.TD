@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 
 [System.Serializable]
 public class MatrixModel
@@ -50,12 +51,5 @@ public class MatrixModel
     }
 }
 
-public enum CellValue { Free, Taken, Room }
+public enum CellValue { Free, Taken, Room, Corridor }
 
-[System.Serializable]
-public class CellData
-{
-    public Vector2Int MartixIndex;
-    public CellValue Value;
-    public Vector3 WorldPosition;
-}
