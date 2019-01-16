@@ -17,7 +17,8 @@ namespace Assets.Scripts.SO
 
         [ContextMenu("CreateMap")]
         public void CreateMap()
-        {           
+        {
+            Tiles = new List<GameObject>();
             CreateRoot();
 
             foreach (CellData cell in Map.Cells)

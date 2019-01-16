@@ -112,6 +112,83 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &405373324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 405373326}
+  - component: {fileID: 405373325}
+  m_Layer: 0
+  m_Name: Init
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &405373325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405373324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 84e0a482c445852478dff60efd2e8d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Events:
+    Init:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: e459211799ec65a4f81e81ae71316cbb, type: 2}
+          m_MethodName: CreateMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    OnNextFramAfterInit:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: fd1784743252d3d459cf7f9f5796495f, type: 2}
+          m_MethodName: SpawnCharacter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+--- !u!4 &405373326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405373324}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1200827117
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,8 +257,54 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1326213569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1326213571}
+  - component: {fileID: 1326213570}
+  m_Layer: 0
+  m_Name: NavMeshVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1326213570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326213569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 11c803f6e582b584ca5d541e8a5cd271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Tracked: {fileID: 1326213571}
+  m_Size: {x: 80, y: 20, z: 80}
+--- !u!4 &1326213571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326213569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.2, y: 0, z: 17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1421512997
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,354 +345,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421512997}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1482037529
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1482037531}
-  - component: {fileID: 1482037530}
-  m_Layer: 0
-  m_Name: Map
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1482037530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482037529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 8152148f606cad94990227bdf96cde2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MartixModel:
-    MatrixSize: {x: 10, y: 10}
-    Cells:
-    - MartixIndex: {x: 0, y: 0}
-      Value: 0
-      WorldPosition: {x: 0, y: 0, z: 0}
-    - MartixIndex: {x: 0, y: 1}
-      Value: 0
-      WorldPosition: {x: 0, y: 1, z: 0}
-    - MartixIndex: {x: 0, y: 2}
-      Value: 0
-      WorldPosition: {x: 0, y: 2, z: 0}
-    - MartixIndex: {x: 0, y: 3}
-      Value: 0
-      WorldPosition: {x: 0, y: 3, z: 0}
-    - MartixIndex: {x: 0, y: 4}
-      Value: 0
-      WorldPosition: {x: 0, y: 4, z: 0}
-    - MartixIndex: {x: 0, y: 5}
-      Value: 0
-      WorldPosition: {x: 0, y: 5, z: 0}
-    - MartixIndex: {x: 0, y: 6}
-      Value: 0
-      WorldPosition: {x: 0, y: 6, z: 0}
-    - MartixIndex: {x: 0, y: 7}
-      Value: 0
-      WorldPosition: {x: 0, y: 7, z: 0}
-    - MartixIndex: {x: 0, y: 8}
-      Value: 0
-      WorldPosition: {x: 0, y: 8, z: 0}
-    - MartixIndex: {x: 0, y: 9}
-      Value: 0
-      WorldPosition: {x: 0, y: 9, z: 0}
-    - MartixIndex: {x: 1, y: 0}
-      Value: 0
-      WorldPosition: {x: 1, y: 0, z: 0}
-    - MartixIndex: {x: 1, y: 1}
-      Value: 0
-      WorldPosition: {x: 1, y: 1, z: 0}
-    - MartixIndex: {x: 1, y: 2}
-      Value: 0
-      WorldPosition: {x: 1, y: 2, z: 0}
-    - MartixIndex: {x: 1, y: 3}
-      Value: 0
-      WorldPosition: {x: 1, y: 3, z: 0}
-    - MartixIndex: {x: 1, y: 4}
-      Value: 0
-      WorldPosition: {x: 1, y: 4, z: 0}
-    - MartixIndex: {x: 1, y: 5}
-      Value: 0
-      WorldPosition: {x: 1, y: 5, z: 0}
-    - MartixIndex: {x: 1, y: 6}
-      Value: 0
-      WorldPosition: {x: 1, y: 6, z: 0}
-    - MartixIndex: {x: 1, y: 7}
-      Value: 0
-      WorldPosition: {x: 1, y: 7, z: 0}
-    - MartixIndex: {x: 1, y: 8}
-      Value: 0
-      WorldPosition: {x: 1, y: 8, z: 0}
-    - MartixIndex: {x: 1, y: 9}
-      Value: 0
-      WorldPosition: {x: 1, y: 9, z: 0}
-    - MartixIndex: {x: 2, y: 0}
-      Value: 0
-      WorldPosition: {x: 2, y: 0, z: 0}
-    - MartixIndex: {x: 2, y: 1}
-      Value: 0
-      WorldPosition: {x: 2, y: 1, z: 0}
-    - MartixIndex: {x: 2, y: 2}
-      Value: 0
-      WorldPosition: {x: 2, y: 2, z: 0}
-    - MartixIndex: {x: 2, y: 3}
-      Value: 0
-      WorldPosition: {x: 2, y: 3, z: 0}
-    - MartixIndex: {x: 2, y: 4}
-      Value: 0
-      WorldPosition: {x: 2, y: 4, z: 0}
-    - MartixIndex: {x: 2, y: 5}
-      Value: 0
-      WorldPosition: {x: 2, y: 5, z: 0}
-    - MartixIndex: {x: 2, y: 6}
-      Value: 0
-      WorldPosition: {x: 2, y: 6, z: 0}
-    - MartixIndex: {x: 2, y: 7}
-      Value: 0
-      WorldPosition: {x: 2, y: 7, z: 0}
-    - MartixIndex: {x: 2, y: 8}
-      Value: 0
-      WorldPosition: {x: 2, y: 8, z: 0}
-    - MartixIndex: {x: 2, y: 9}
-      Value: 0
-      WorldPosition: {x: 2, y: 9, z: 0}
-    - MartixIndex: {x: 3, y: 0}
-      Value: 0
-      WorldPosition: {x: 3, y: 0, z: 0}
-    - MartixIndex: {x: 3, y: 1}
-      Value: 0
-      WorldPosition: {x: 3, y: 1, z: 0}
-    - MartixIndex: {x: 3, y: 2}
-      Value: 0
-      WorldPosition: {x: 3, y: 2, z: 0}
-    - MartixIndex: {x: 3, y: 3}
-      Value: 0
-      WorldPosition: {x: 3, y: 3, z: 0}
-    - MartixIndex: {x: 3, y: 4}
-      Value: 0
-      WorldPosition: {x: 3, y: 4, z: 0}
-    - MartixIndex: {x: 3, y: 5}
-      Value: 0
-      WorldPosition: {x: 3, y: 5, z: 0}
-    - MartixIndex: {x: 3, y: 6}
-      Value: 0
-      WorldPosition: {x: 3, y: 6, z: 0}
-    - MartixIndex: {x: 3, y: 7}
-      Value: 0
-      WorldPosition: {x: 3, y: 7, z: 0}
-    - MartixIndex: {x: 3, y: 8}
-      Value: 0
-      WorldPosition: {x: 3, y: 8, z: 0}
-    - MartixIndex: {x: 3, y: 9}
-      Value: 0
-      WorldPosition: {x: 3, y: 9, z: 0}
-    - MartixIndex: {x: 4, y: 0}
-      Value: 0
-      WorldPosition: {x: 4, y: 0, z: 0}
-    - MartixIndex: {x: 4, y: 1}
-      Value: 0
-      WorldPosition: {x: 4, y: 1, z: 0}
-    - MartixIndex: {x: 4, y: 2}
-      Value: 0
-      WorldPosition: {x: 4, y: 2, z: 0}
-    - MartixIndex: {x: 4, y: 3}
-      Value: 0
-      WorldPosition: {x: 4, y: 3, z: 0}
-    - MartixIndex: {x: 4, y: 4}
-      Value: 0
-      WorldPosition: {x: 4, y: 4, z: 0}
-    - MartixIndex: {x: 4, y: 5}
-      Value: 0
-      WorldPosition: {x: 4, y: 5, z: 0}
-    - MartixIndex: {x: 4, y: 6}
-      Value: 0
-      WorldPosition: {x: 4, y: 6, z: 0}
-    - MartixIndex: {x: 4, y: 7}
-      Value: 0
-      WorldPosition: {x: 4, y: 7, z: 0}
-    - MartixIndex: {x: 4, y: 8}
-      Value: 0
-      WorldPosition: {x: 4, y: 8, z: 0}
-    - MartixIndex: {x: 4, y: 9}
-      Value: 0
-      WorldPosition: {x: 4, y: 9, z: 0}
-    - MartixIndex: {x: 5, y: 0}
-      Value: 0
-      WorldPosition: {x: 5, y: 0, z: 0}
-    - MartixIndex: {x: 5, y: 1}
-      Value: 0
-      WorldPosition: {x: 5, y: 1, z: 0}
-    - MartixIndex: {x: 5, y: 2}
-      Value: 0
-      WorldPosition: {x: 5, y: 2, z: 0}
-    - MartixIndex: {x: 5, y: 3}
-      Value: 0
-      WorldPosition: {x: 5, y: 3, z: 0}
-    - MartixIndex: {x: 5, y: 4}
-      Value: 0
-      WorldPosition: {x: 5, y: 4, z: 0}
-    - MartixIndex: {x: 5, y: 5}
-      Value: 0
-      WorldPosition: {x: 5, y: 5, z: 0}
-    - MartixIndex: {x: 5, y: 6}
-      Value: 0
-      WorldPosition: {x: 5, y: 6, z: 0}
-    - MartixIndex: {x: 5, y: 7}
-      Value: 0
-      WorldPosition: {x: 5, y: 7, z: 0}
-    - MartixIndex: {x: 5, y: 8}
-      Value: 0
-      WorldPosition: {x: 5, y: 8, z: 0}
-    - MartixIndex: {x: 5, y: 9}
-      Value: 0
-      WorldPosition: {x: 5, y: 9, z: 0}
-    - MartixIndex: {x: 6, y: 0}
-      Value: 0
-      WorldPosition: {x: 6, y: 0, z: 0}
-    - MartixIndex: {x: 6, y: 1}
-      Value: 0
-      WorldPosition: {x: 6, y: 1, z: 0}
-    - MartixIndex: {x: 6, y: 2}
-      Value: 0
-      WorldPosition: {x: 6, y: 2, z: 0}
-    - MartixIndex: {x: 6, y: 3}
-      Value: 0
-      WorldPosition: {x: 6, y: 3, z: 0}
-    - MartixIndex: {x: 6, y: 4}
-      Value: 0
-      WorldPosition: {x: 6, y: 4, z: 0}
-    - MartixIndex: {x: 6, y: 5}
-      Value: 0
-      WorldPosition: {x: 6, y: 5, z: 0}
-    - MartixIndex: {x: 6, y: 6}
-      Value: 0
-      WorldPosition: {x: 6, y: 6, z: 0}
-    - MartixIndex: {x: 6, y: 7}
-      Value: 0
-      WorldPosition: {x: 6, y: 7, z: 0}
-    - MartixIndex: {x: 6, y: 8}
-      Value: 0
-      WorldPosition: {x: 6, y: 8, z: 0}
-    - MartixIndex: {x: 6, y: 9}
-      Value: 0
-      WorldPosition: {x: 6, y: 9, z: 0}
-    - MartixIndex: {x: 7, y: 0}
-      Value: 0
-      WorldPosition: {x: 7, y: 0, z: 0}
-    - MartixIndex: {x: 7, y: 1}
-      Value: 0
-      WorldPosition: {x: 7, y: 1, z: 0}
-    - MartixIndex: {x: 7, y: 2}
-      Value: 0
-      WorldPosition: {x: 7, y: 2, z: 0}
-    - MartixIndex: {x: 7, y: 3}
-      Value: 0
-      WorldPosition: {x: 7, y: 3, z: 0}
-    - MartixIndex: {x: 7, y: 4}
-      Value: 0
-      WorldPosition: {x: 7, y: 4, z: 0}
-    - MartixIndex: {x: 7, y: 5}
-      Value: 0
-      WorldPosition: {x: 7, y: 5, z: 0}
-    - MartixIndex: {x: 7, y: 6}
-      Value: 0
-      WorldPosition: {x: 7, y: 6, z: 0}
-    - MartixIndex: {x: 7, y: 7}
-      Value: 0
-      WorldPosition: {x: 7, y: 7, z: 0}
-    - MartixIndex: {x: 7, y: 8}
-      Value: 0
-      WorldPosition: {x: 7, y: 8, z: 0}
-    - MartixIndex: {x: 7, y: 9}
-      Value: 0
-      WorldPosition: {x: 7, y: 9, z: 0}
-    - MartixIndex: {x: 8, y: 0}
-      Value: 0
-      WorldPosition: {x: 8, y: 0, z: 0}
-    - MartixIndex: {x: 8, y: 1}
-      Value: 0
-      WorldPosition: {x: 8, y: 1, z: 0}
-    - MartixIndex: {x: 8, y: 2}
-      Value: 0
-      WorldPosition: {x: 8, y: 2, z: 0}
-    - MartixIndex: {x: 8, y: 3}
-      Value: 0
-      WorldPosition: {x: 8, y: 3, z: 0}
-    - MartixIndex: {x: 8, y: 4}
-      Value: 0
-      WorldPosition: {x: 8, y: 4, z: 0}
-    - MartixIndex: {x: 8, y: 5}
-      Value: 0
-      WorldPosition: {x: 8, y: 5, z: 0}
-    - MartixIndex: {x: 8, y: 6}
-      Value: 0
-      WorldPosition: {x: 8, y: 6, z: 0}
-    - MartixIndex: {x: 8, y: 7}
-      Value: 0
-      WorldPosition: {x: 8, y: 7, z: 0}
-    - MartixIndex: {x: 8, y: 8}
-      Value: 0
-      WorldPosition: {x: 8, y: 8, z: 0}
-    - MartixIndex: {x: 8, y: 9}
-      Value: 0
-      WorldPosition: {x: 8, y: 9, z: 0}
-    - MartixIndex: {x: 9, y: 0}
-      Value: 0
-      WorldPosition: {x: 9, y: 0, z: 0}
-    - MartixIndex: {x: 9, y: 1}
-      Value: 0
-      WorldPosition: {x: 9, y: 1, z: 0}
-    - MartixIndex: {x: 9, y: 2}
-      Value: 0
-      WorldPosition: {x: 9, y: 2, z: 0}
-    - MartixIndex: {x: 9, y: 3}
-      Value: 0
-      WorldPosition: {x: 9, y: 3, z: 0}
-    - MartixIndex: {x: 9, y: 4}
-      Value: 0
-      WorldPosition: {x: 9, y: 4, z: 0}
-    - MartixIndex: {x: 9, y: 5}
-      Value: 0
-      WorldPosition: {x: 9, y: 5, z: 0}
-    - MartixIndex: {x: 9, y: 6}
-      Value: 0
-      WorldPosition: {x: 9, y: 6, z: 0}
-    - MartixIndex: {x: 9, y: 7}
-      Value: 0
-      WorldPosition: {x: 9, y: 7, z: 0}
-    - MartixIndex: {x: 9, y: 8}
-      Value: 0
-      WorldPosition: {x: 9, y: 8, z: 0}
-    - MartixIndex: {x: 9, y: 9}
-      Value: 0
-      WorldPosition: {x: 9, y: 9, z: 0}
-  Settings: {fileID: 1421512998}
---- !u!4 &1482037531
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482037529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -734,63 +509,3 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!1 &1761499357
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1761499359}
-  - component: {fileID: 1761499358}
-  m_Layer: 0
-  m_Name: Room_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1761499358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761499357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 8152148f606cad94990227bdf96cde2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MartixModel:
-    MatrixSize: {x: 2, y: 2}
-    Cells:
-    - MartixIndex: {x: 0, y: 0}
-      Value: 1
-      WorldPosition: {x: 0, y: 0, z: 0}
-    - MartixIndex: {x: 0, y: 1}
-      Value: 1
-      WorldPosition: {x: 0, y: 1, z: 0}
-    - MartixIndex: {x: 1, y: 0}
-      Value: 1
-      WorldPosition: {x: 1, y: 0, z: 0}
-    - MartixIndex: {x: 1, y: 1}
-      Value: 1
-      WorldPosition: {x: 1, y: 1, z: 0}
-  Settings: {fileID: 1421512998}
---- !u!4 &1761499359
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761499357}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.65, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
