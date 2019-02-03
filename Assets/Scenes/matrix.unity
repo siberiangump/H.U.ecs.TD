@@ -390,9 +390,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_GeneratorAsset: {fileID: 0}
-  m_Script: {fileID: 11500000, guid: 7d5bf194d90ef0441bcdb993d8b6437a, type: 3}
+  m_Script: {fileID: 11500000, guid: d92f955be2dd07947bc7d4a402bfb995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Offsets:
+    Top: 0.75
+    Bottom: 0.75
+    Right: 0.75
+    Left: 0.75
+  MainCamera: {fileID: 1687258584}
+  CameraMoveSpeed: 0.2
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -419,7 +426,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 50
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -503,7 +510,7 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 1
+  m_ShowToolkit: 0
   m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []

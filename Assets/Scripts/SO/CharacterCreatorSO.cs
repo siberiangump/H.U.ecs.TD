@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using Assets.Scripts.Interfaces;
 using Assets.Scripts.Movement;
+using Assets.Scripts.MainLogic;
+using UnityEngine.AI;
 
 namespace Assets.Scripts.SO
 {
@@ -12,9 +14,11 @@ namespace Assets.Scripts.SO
 
         [ContextMenu("SpawnCharacter")]
         public void SpawnCharacter()
-        {
+        {          
             GameObject character = Instantiate(Character, SpawnPoint, Quaternion.identity);
             SpawnGuideObject(character);
+
+            GameContext.Register(Constants.HeroTransform, character.transform);
         }
 
         private void SpawnGuideObject(GameObject character)
