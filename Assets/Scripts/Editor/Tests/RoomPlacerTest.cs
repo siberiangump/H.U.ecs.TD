@@ -12,12 +12,10 @@ namespace Tests
         [Test]
         [Category("DungeonCreation")]
         public void SetRoomTest()
-        {
-            GridModel mapGrid = new GridModel(5, 5);
-            MatrixModel mapMatrix = new MatrixModel(new Vector2Int(10, 10), mapGrid);
-
-            GridModel roomGrid = new GridModel(1, 1);
-            MatrixModel roomMatrix = new MatrixModel(new Vector2Int(1, 1), roomGrid);
+        {           
+            MatrixModel mapMatrix = new MatrixModel(new Vector2Int(10, 10));
+                       
+            MatrixModel roomMatrix = new MatrixModel(new Vector2Int(1, 1));
 
             Placer roomPlacer = new Placer(mapMatrix, CellValue.Room);
             Test1(mapMatrix, roomMatrix, roomPlacer);
@@ -34,9 +32,8 @@ namespace Tests
         }
 
         private void Test2(Placer roomPlacer)
-        {
-            GridModel roomGrid = new GridModel(5, 5);
-            MatrixModel roomMatrix1 = new MatrixModel(new Vector2Int(5, 5), roomGrid);
+        {           
+            MatrixModel roomMatrix1 = new MatrixModel(new Vector2Int(5, 5));
             Assert.IsFalse(roomPlacer.TryPlace(roomMatrix1, Vector2Int.zero));
         }
 
@@ -46,9 +43,8 @@ namespace Tests
         }
 
         private void Test4(Placer roomPlacer)
-        {
-            GridModel roomGrid = new GridModel(3, 3);
-            MatrixModel roomMatrix1 = new MatrixModel(new Vector2Int(3, 3), roomGrid);
+        {            
+            MatrixModel roomMatrix1 = new MatrixModel(new Vector2Int(3, 3));
             Assert.IsFalse(roomPlacer.TryPlace(roomMatrix1, new Vector2Int(2,2)));
         }
     }

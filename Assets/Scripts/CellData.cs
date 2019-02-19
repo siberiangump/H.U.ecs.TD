@@ -6,8 +6,7 @@ namespace Assets.Scripts
     public class CellData
     {
         public Vector2Int MartixIndex;
-        public CellValue Value;
-        public Vector3 WorldPosition;
+        public CellValue Value;       
     }
 
 }

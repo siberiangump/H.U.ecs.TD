@@ -22,8 +22,7 @@ namespace Assets.Scripts.SO
         {
             int width = Map.width;
             int height = Map.height;
-            GridModel mapGrid = new GridModel(1, 1);
-            MatrixModel mapMatrix = new MatrixModel(new Vector2Int(width, height), mapGrid);
+            MatrixModel mapMatrix = new MatrixModel(new Vector2Int(width, height));
 
             for (int i = 0; i < height; i++)
             {

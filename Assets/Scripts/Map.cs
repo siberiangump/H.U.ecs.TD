@@ -17,7 +17,7 @@ public class Map : MonoBehaviour
     [ContextMenu ("GenerateEmptyMap")]
     public void GenerateEmptyMap()
     {
-        MartixModel.Init(Grid);
+        MartixModel.Init();
     }
 
     public void OnDrawGizmos()
@@ -27,7 +27,7 @@ public class Map : MonoBehaviour
         foreach (CellData item in MartixModel.Cells)
         {
             Gizmos.color = item.Value == CellValue.Free ? Color.green : Color.red;
-            Gizmos.DrawSphere(item.WorldPosition + this.transform.position, .2f);
+            //Gizmos.DrawSphere(item.Position + this.transform.position, .2f);
         }
     }
 }

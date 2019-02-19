@@ -5,19 +5,17 @@ using Assets.Scripts;
 
 [System.Serializable]
 public class MatrixModel
-{
-    GridModel Grid;
+{  
     public Vector2Int MatrixSize;
     public List<CellData> Cells = new List<CellData>();
 
-    public MatrixModel(Vector2Int matrixSize, GridModel gridModel)
+    public MatrixModel(Vector2Int matrixSize)
     {
-        MatrixSize = matrixSize;
-        Grid = gridModel;
-        Init(gridModel);
+        MatrixSize = matrixSize;       
+        Init();
     }
 
-    public void Init(GridModel grid)
+    public void Init()
     {
         Cells.Clear();
         for (int x = 0; x < MatrixSize.x; x++)
@@ -34,8 +32,7 @@ public class MatrixModel
         Vector2Int index = new Vector2Int { x = x, y = y };
         CellData cellData = new CellData();
         cellData.MartixIndex = index;
-        cellData.Value = CellValue.Free;
-        cellData.WorldPosition = Grid.GetDisplacement(index);
+        cellData.Value = CellValue.Free;        
 
         return cellData;
     }

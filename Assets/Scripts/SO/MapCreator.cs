@@ -23,8 +23,8 @@ namespace Assets.Scripts.SO
 
             foreach (CellData cell in Map.Cells)
             {
-                if (cell.Value != CellValue.Free)
-                    InstatiateTile(cell.Value, cell.WorldPosition);
+                //if (cell.Value != CellValue.Free)
+                //    InstatiateTile(cell.Value, cell.Position);
             }
         }
 
@@ -33,8 +33,7 @@ namespace Assets.Scripts.SO
             GameObject tilePrefab = GetPrefab(value);
             GameObject tile = Instantiate(tilePrefab, worldPosition, Quaternion.identity, Root);
            // tile.transform.SetParent(Root);
-            Tiles.Add(tile);
-          
+            Tiles.Add(tile);          
         }
 
         private void CreateRoot()
