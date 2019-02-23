@@ -45,11 +45,11 @@ namespace Assets.Scripts
 
         private Vector2Int[] RoomPointsToMapPoints(MatrixModel roomM, Vector2Int roomPos)
         {
-            int pointsArrSize = roomM.MatrixSize.x + roomM.MatrixSize.y;
+            int pointsArrSize = roomM.Size.x + roomM.Size.y;
             Vector2Int[] points = new Vector2Int[pointsArrSize];
 
-            int xLenght = roomM.MatrixSize.x;
-            int yLenght = roomM.MatrixSize.y;
+            int xLenght = roomM.Size.x;
+            int yLenght = roomM.Size.y;
 
             for (int i = 0; i < xLenght; i++)
             {
@@ -74,12 +74,12 @@ namespace Assets.Scripts
 
         private bool IsRoomBiggerThenMap(MatrixModel room)
         {
-            return room.MatrixSize.x > Map.MatrixSize.x || room.MatrixSize.y > Map.MatrixSize.y;
+            return room.Size.x > Map.Size.x || room.Size.y > Map.Size.y;
         }
 
         private bool IsPointOnMap(Vector2Int point)
         {
-            return point.x < Map.MatrixSize.x && point.y < Map.MatrixSize.y;
+            return point.x < Map.Size.x && point.y < Map.Size.y;
         }
 
         private bool IsPointFree(Vector2Int pos)
