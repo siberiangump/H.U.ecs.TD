@@ -13,8 +13,7 @@ namespace Tests
         [Category("DungeonCreation")]
         public void SetRoomTest()
         {           
-            MatrixModel mapMatrix = new MatrixModel(new Vector2Int(10, 10));
-                       
+            MatrixModel mapMatrix = new MatrixModel(new Vector2Int(10, 10));                       
             MatrixModel roomMatrix = new MatrixModel(new Vector2Int(1, 1));
 
             Placer roomPlacer = new Placer(mapMatrix, CellValue.Room);
