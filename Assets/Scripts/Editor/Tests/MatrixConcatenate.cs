@@ -38,6 +38,7 @@ namespace Tests
         {
             MatrixModel left = new MatrixModel(new Vector2Int(5, 5));
             MatrixModel right = new MatrixModel(new Vector2Int(5, 3));
+            right.SetCellValue(4,2,CellValue.Room);
             Vector2Int concatPoint = new Vector2Int(0, 5);
 
             MatrixConcatenator concatenator = new MatrixConcatenator();
@@ -45,10 +46,18 @@ namespace Tests
             Assert.AreEqual(concatMatrix.Size.x, 5);
             Assert.AreEqual(concatMatrix.Size.y, 8);
 
+            CellValue cellValueFromRight = concatMatrix.GetCellData(4, 7).Value;
+            Assert.IsTrue(cellValueFromRight == CellValue.Room);
+            cellValueFromRight = concatMatrix.GetCellData(4, 6).Value;
+            Assert.IsTrue(cellValueFromRight == CellValue.Free);
+
             concatPoint = new Vector2Int(2, 5);
             concatMatrix = concatenator.Concat(left, concatPoint, right);
             Assert.AreEqual(concatMatrix.Size.x, 7);
             Assert.AreEqual(concatMatrix.Size.y, 8);
+
+            cellValueFromRight = concatMatrix.GetCellData(6, 7).Value;
+            Assert.IsTrue(cellValueFromRight == CellValue.Room);
         }
     }
 }
