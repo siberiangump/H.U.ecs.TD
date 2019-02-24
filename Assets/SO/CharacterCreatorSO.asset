@@ -15,4 +15,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 2894395839766132801, guid: ec68feae6af0cb549b1f785fd27e846f,
     type: 3}
-  SpawnPoint: {x: 1, y: -0.1, z: 1}
+  SpawnPoint: {x: 4, y: -0.1, z: 2}
