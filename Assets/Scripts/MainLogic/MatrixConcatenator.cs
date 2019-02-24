@@ -8,26 +8,30 @@ namespace Assets.Scripts
     {
         public MatrixModel Concat(MatrixModel left, Vector2Int concatPoint, MatrixModel right)
         {
-            int rows = concatPoint.x + right.Size.x;
-            int colums = concatPoint.y + right.Size.y;
+            int colums = GetColumnSize(left, concatPoint, right);
+            int rows = GetRowsSize(left, concatPoint, right);
 
-            Vector2Int size = new Vector2Int(rows, colums);
+            Vector2Int size = new Vector2Int(colums, rows);
             MatrixModel newMatrix = new MatrixModel(size);
             SetLeftValuesToNewMatrix(left, newMatrix);
             SetRightValuesToNewMatrix(concatPoint, right, newMatrix);
             return newMatrix;
         }
 
-        private void SetRightValuesToNewMatrix(Vector2Int concatPoint, MatrixModel right, MatrixModel newMatrix)
+        private int GetColumnSize(MatrixModel left, Vector2Int concatPoint, MatrixModel right)
         {
-            for (int i = concatPoint.x; i < newMatrix.Size.x; i++)
-            {
-                for (int j = concatPoint.y; j < newMatrix.Size.y; j++)
-                {
-                    CellValue rightCellValue = right.GetCellData(i - concatPoint.x, j - concatPoint.y).Value;
-                    newMatrix.SetCellValue(i, j, rightCellValue);
-                }
-            }
+            int columns = concatPoint.x + right.Size.x;
+            if (columns < left.Size.x)
+                columns = left.Size.x;
+            return columns;
+        }
+
+        private int GetRowsSize(MatrixModel left, Vector2Int concatPoint, MatrixModel right)
+        {
+            int rows = concatPoint.y + right.Size.y;
+            if (rows < left.Size.y)
+                rows = left.Size.y;
+            return rows;
         }
 
         private void SetLeftValuesToNewMatrix(MatrixModel left, MatrixModel newMatrix)
@@ -41,5 +45,21 @@ namespace Assets.Scripts
                 }
             }
         }
+
+        private void SetRightValuesToNewMatrix(Vector2Int concatPoint, MatrixModel right, MatrixModel newMatrix)
+        {
+            for (int i = concatPoint.x; i < newMatrix.Size.x; i++)
+            {
+                for (int j = concatPoint.y; j < newMatrix.Size.y; j++)
+                {
+                    CellData cellData = right.GetCellData(i - concatPoint.x, j - concatPoint.y);
+                    if (cellData != null)
+                    {
+                        CellValue rightCellValue = cellData.Value;
+                        newMatrix.SetCellValue(i, j, rightCellValue);
+                    }
+                }
+            }
+        }        
     }
 }

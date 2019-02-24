@@ -27,7 +27,7 @@ namespace Assets.Scripts.SO
 
         private Vector2Int GetConcatPoint(MatrixModel matrix)
         {
-            return new Vector2Int(0, matrix.Size.y + 1);
+            return new Vector2Int(matrix.Size.x, 0);
         }
     }
 }
