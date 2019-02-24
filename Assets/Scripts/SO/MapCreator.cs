@@ -21,22 +21,14 @@ namespace Assets.Scripts.SO
         {
             Tiles = new List<GameObject>();
             CreateRoot();
-
-            Debug.LogWarning(Map.Size);
+                       
             foreach (CellData cell in Map.Cells)
             {
                 Vector3 cellPos = GetTilePosition(cell.MartixIndex);
-                // Debug.LogWarning(cell.MartixIndex +" " + cell.Value);
                 if (cell.Value != CellValue.Free)
                 {
-                    
                     InstatiateTile(cell.Value, cellPos);
                 }
-                else
-                {
-                    InstatiateTile(CellValue.Corridor, cellPos);
-                }
-
             }
         }
 
@@ -44,7 +36,6 @@ namespace Assets.Scripts.SO
         {
             GameObject tilePrefab = GetPrefab(value);
             GameObject tile = Instantiate(tilePrefab, worldPosition, Quaternion.identity, Root);
-            // tile.transform.SetParent(Root);
             Tiles.Add(tile);
         }
 
