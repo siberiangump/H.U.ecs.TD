@@ -13,21 +13,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec28f312e7645ce4e964d672f1ea6c5f, type: 3}
   m_Name: TextureParser 2
   m_EditorClassIdentifier: 
-  Map: {fileID: 2800000, guid: 5348365e17e77bc4e8f3ad10f21915da, type: 3}
+  Map: {fileID: 2800000, guid: 7ea572b50bacf48438be039ff5e1c04e, type: 3}
   PixelValues:
   - PointValue: 2
     PixelColor:
       serializedVersion: 2
-      rgba: 4278914047
+      rgba: 4278190335
   - PointValue: 3
     PixelColor:
       serializedVersion: 2
-      rgba: 4294926336
-  - PointValue: 2
-    PixelColor:
-      serializedVersion: 2
-      rgba: 4288387837
-  - PointValue: 2
-    PixelColor:
-      serializedVersion: 2
-      rgba: 4288519679
+      rgba: 4294901760

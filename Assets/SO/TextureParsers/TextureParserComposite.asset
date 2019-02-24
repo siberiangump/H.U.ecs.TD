@@ -14,6 +14,7 @@ MonoBehaviour:
   m_Name: TextureParserComposite
   m_EditorClassIdentifier: 
   MapHolderObjects:
-  - {fileID: 11400000, guid: 3456372504a7b084fa99eba6c1d2980c, type: 2}
-  - {fileID: 11400000, guid: 3456372504a7b084fa99eba6c1d2980c, type: 2}
+  - {fileID: 11400000, guid: 2ee454f2f2dc6fb48b0fa209fcd992f4, type: 2}
+  - {fileID: 11400000, guid: e14ac37acad315c4ca164163fd4f5996, type: 2}
+  - {fileID: 11400000, guid: e3018dd59b02c1746823a1fb1fbdcb43, type: 2}
   - {fileID: 11400000, guid: 3456372504a7b084fa99eba6c1d2980c, type: 2}
