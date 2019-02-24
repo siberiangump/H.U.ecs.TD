@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbaf90ff2cd64614d867ede11fd2dc12, type: 3}
   m_Name: MapCreator
   m_EditorClassIdentifier: 
-  MapHolderObj: {fileID: 11400000, guid: 6a9eef795d9348442ba1ce40f7858c6a, type: 2}
+  MapHolderObj: {fileID: 11400000, guid: e90ba84fe7e77874ab4e75d55a2acd57, type: 2}
+  TilePositionProviderObj: {fileID: 11400000, guid: 5bd1220979ee09647b821d3360b555e8,
+    type: 2}
   TilePrefabs:
   - Value: 2
     TilePrefab: {fileID: 4230409779693922288, guid: 45b7ba6586dc21b43950daac990b79db,

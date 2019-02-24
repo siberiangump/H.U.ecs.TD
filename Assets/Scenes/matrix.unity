@@ -161,18 +161,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     OnNextFramAfterInit:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11400000, guid: fd1784743252d3d459cf7f9f5796495f, type: 2}
-          m_MethodName: SpawnCharacter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
 --- !u!4 &405373326
@@ -335,9 +324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a90f9ba7f105ff459c0c28f7c6b0731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Settings:
-    RowsDisplacment: 1
-    ColumsDisplacment: 1
 --- !u!4 &1421512999
 Transform:
   m_ObjectHideFlags: 0
@@ -393,11 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92f955be2dd07947bc7d4a402bfb995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Offsets:
-    Top: 0.75
-    Bottom: 0.75
-    Right: 0.75
-    Left: 0.75
   MainCamera: {fileID: 1687258584}
   CameraMoveSpeed: 0.2
 --- !u!20 &1687258584

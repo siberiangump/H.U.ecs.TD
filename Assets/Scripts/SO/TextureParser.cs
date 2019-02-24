@@ -29,6 +29,7 @@ namespace Assets.Scripts.SO
                 for (int j = 0; j < width; j++)
                 {
                     Color32 pixelColor = Map.GetPixel(i, j);
+                    Debug.LogWarning(i + " " + j + " " +  pixelColor);
                     CellData cellData = mapMatrix.GetCellData(new Vector2Int(i, j));
                     cellData.Value = GetCellValue(pixelColor);
                 }

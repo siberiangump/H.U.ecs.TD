@@ -10,6 +10,7 @@ namespace Assets.Scripts.SO
     class MapCreator : ScriptableObject
     {
         [Validate(typeof(IMapHolder))] [SerializeField] private UnityEngine.Object MapHolderObj;
+        [Validate(typeof(ITilePositionProvider))] [SerializeField] private UnityEngine.Object TilePositionProviderObj;
         [SerializeField] private PrefabByCellValue[] TilePrefabs;
 
         private List<GameObject> Tiles;
@@ -21,10 +22,21 @@ namespace Assets.Scripts.SO
             Tiles = new List<GameObject>();
             CreateRoot();
 
+            Debug.LogWarning(Map.Size);
             foreach (CellData cell in Map.Cells)
             {
-                //if (cell.Value != CellValue.Free)
-                //    InstatiateTile(cell.Value, cell.Position);
+                Vector3 cellPos = GetTilePosition(cell.MartixIndex);
+                // Debug.LogWarning(cell.MartixIndex +" " + cell.Value);
+                if (cell.Value != CellValue.Free)
+                {
+                    
+                    InstatiateTile(cell.Value, cellPos);
+                }
+                else
+                {
+                    InstatiateTile(CellValue.Corridor, cellPos);
+                }
+
             }
         }
 
@@ -32,8 +44,8 @@ namespace Assets.Scripts.SO
         {
             GameObject tilePrefab = GetPrefab(value);
             GameObject tile = Instantiate(tilePrefab, worldPosition, Quaternion.identity, Root);
-           // tile.transform.SetParent(Root);
-            Tiles.Add(tile);          
+            // tile.transform.SetParent(Root);
+            Tiles.Add(tile);
         }
 
         private void CreateRoot()
@@ -63,6 +75,11 @@ namespace Assets.Scripts.SO
             Tiles = new List<GameObject>();
         }
 
+        private Vector3 GetTilePosition(Vector2Int indexes)
+        {
+            return TilePositionProviderGetter.GetPos(indexes);
+        }
+
         private MatrixModel Map
         {
             get { return MapHolderGetter.Map; }
@@ -71,6 +88,11 @@ namespace Assets.Scripts.SO
         private IMapHolder MapHolderGetter
         {
             get { return MapHolderObj as IMapHolder; }
+        }
+
+        private ITilePositionProvider TilePositionProviderGetter
+        {
+            get { return TilePositionProviderObj as ITilePositionProvider; }
         }
 
         [Serializable]
