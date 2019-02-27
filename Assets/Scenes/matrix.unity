@@ -146,6 +146,17 @@ MonoBehaviour:
     Init:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 11400000, guid: 30bc688499f75f54296c40b7f574eb4c, type: 2}
+          m_MethodName: Init
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 11400000, guid: e459211799ec65a4f81e81ae71316cbb, type: 2}
           m_MethodName: CreateMap
           m_Mode: 1
@@ -161,7 +172,29 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     OnNextFramAfterInit:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: fd1784743252d3d459cf7f9f5796495f, type: 2}
+          m_MethodName: SpawnCharacter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: c74182685cbd26746ab121b9109c6e1c, type: 2}
+          m_MethodName: CreateMobs
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
 --- !u!4 &405373326
@@ -380,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 1687258584}
-  CameraMoveSpeed: 0.2
+  CameraMoveSpeed: 2
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -407,7 +440,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
