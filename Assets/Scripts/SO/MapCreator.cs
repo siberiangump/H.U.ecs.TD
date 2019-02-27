@@ -21,7 +21,7 @@ namespace Assets.Scripts.SO
         {
             Tiles = new List<GameObject>();
             CreateRoot();
-                       
+           
             foreach (CellData cell in Map.Cells)
             {
                 Vector3 cellPos = GetTilePosition(cell.MartixIndex);
