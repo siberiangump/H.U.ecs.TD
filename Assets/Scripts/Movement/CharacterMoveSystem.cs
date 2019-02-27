@@ -20,8 +20,5 @@ namespace Assets.Scripts.Movement
             if (GuideTransform != null)
                 NavAgent.SetDestination(GuideTransform.position);
         }
-
-        
-
     }
 }
