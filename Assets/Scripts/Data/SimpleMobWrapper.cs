@@ -5,6 +5,7 @@ using Assets.Scripts.Data;
 [Serializable]
 public struct SimpleMob : IComponentData
 {
+    public int Id;
     public MobState State;
 }
 
