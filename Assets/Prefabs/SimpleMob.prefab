@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7756534540452283201}
   - component: {fileID: 1559723114450898192}
   - component: {fileID: 5594092676581777873}
+  - component: {fileID: 9119396967924126473}
   m_Layer: 0
   m_Name: SimpleMob
   m_TagString: Untagged
@@ -69,7 +70,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2894395839766132801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -82,7 +82,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2894395839766132801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: c99526471bf9f2d47a71068a396afd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -98,7 +97,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2894395839766132801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 0af0db853e732453799566a0e597993c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -116,7 +114,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2894395839766132801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 1d8133af023214ae993fc28d2fd97a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -129,12 +126,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2894395839766132801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 57fa4c5c09cc84c40a48411665baa3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_SerializedData:
     Amount: 100
+--- !u!114 &9119396967924126473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894395839766132801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba975f27b2c06074a8b0d1b9809f43d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentState: 0
 --- !u!1 &7433803409771366374
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +155,7 @@ GameObject:
   - component: {fileID: 6057364415040286345}
   - component: {fileID: 35832642127788497}
   m_Layer: 0
-  m_Name: MonoScripts
+  m_Name: MonoScripts_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,11 +184,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7433803409771366374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 16aa81a50bafccd4cb0afefa3825c319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wrapper: {fileID: 7011407180338002399}
+  Wrapper: {fileID: 9119396967924126473}
   MobPosibleState:
   - State: 0
     StateColor: {r: 1, g: 0, b: 0.82385063, a: 1}
