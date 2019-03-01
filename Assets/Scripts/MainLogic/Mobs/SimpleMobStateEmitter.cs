@@ -7,18 +7,19 @@ namespace Assets.Scripts.MainLogic.Mobs
 {
     class SimpleMobStateEmitter : MonoBehaviour
     {
-        [SerializeField] private SimpleMobWrapper Wrapper;
+        [SerializeField] private StateViewer Wrapper;
         [SerializeField] private MaterialByStates[] MobPosibleState;
         [SerializeField] private MeshRenderer MobRenderer;
 
         private void Update()
         {
-            MobState state = Wrapper.Value.State;
+            MobState state = Wrapper.CurrentState;
             for (int i = 0; i < MobPosibleState.Length; i++)
             {
-                if (MobPosibleState [i].State == state)
+                Color stateColor = MobPosibleState[i].StateColor; 
+                if (MobPosibleState [i].State == state && MobRenderer.material.color != stateColor)
                 {
-                    MobRenderer.material.color = MobPosibleState[i].StateColor;
+                    MobRenderer.material.color = stateColor;
                 }
             }
         }

@@ -15,6 +15,7 @@ public class SimpleMobStateSystem : ComponentSystem
         public ComponentDataArray<SimpleMob> States;
         public ComponentDataArray<Position> Pos;
         public ComponentDataArray<Health> Health;
+        public ComponentArray<StateViewer> Viewer;
     }
 
     private struct PlayerGroup
@@ -22,7 +23,7 @@ public class SimpleMobStateSystem : ComponentSystem
         public readonly int Length;
         public ComponentDataArray<PlayerTag> Tag;
         public ComponentDataArray<Position> Pos;
-        public ComponentDataArray<Health> Health;
+        public ComponentDataArray<Health> Health;        
     }
 
     [Inject] MobsGroup Mobs;
@@ -38,13 +39,13 @@ public class SimpleMobStateSystem : ComponentSystem
             float mobHealth = Mobs.Health[i].Amount;
             if (mobHealth <= 0)
             {
-                Mobs.States[i] = ChangeState(MobState.Death);
+                ChangeState(i, MobState.Death);
                 continue;
             }
 
             if (playerHealth <= 0)
             {
-                Mobs.States[i] = ChangeState(MobState.Idle);
+                ChangeState(i, MobState.Idle);
                 continue;
             }
 
@@ -53,19 +54,20 @@ public class SimpleMobStateSystem : ComponentSystem
             int id = Mobs.States[i].Id;
             if (distanceToPlayer < SimpleMobConfig.DistanceToAtack)
             {
-                Mobs.States[i] = ChangeState(MobState.Atack);
+                ChangeState(i, MobState.Atack);
             }
             else
             {
-                Mobs.States[i] = ChangeState(MobState.Idle);
+                ChangeState(i, MobState.Idle);
             }
         }
     }
 
-    private static SimpleMob ChangeState(MobState state)
+    private void ChangeState(int i, MobState state)
     {
         SimpleMob newMob = new SimpleMob();
         newMob.State = state;
-        return newMob;
-    }
+        Mobs.States[i] = newMob;
+        Mobs.Viewer[i].CurrentState = state;
+    }    
 }
