@@ -10,7 +10,7 @@ namespace Assets.Scripts.MainLogic.Weapons
 
         public void Update()
         {
-            WeaponsConfig.PistolBulletRotation = Rotation;
+            PistolBulletConfig.Rotation = Rotation;
         }
     }
 }

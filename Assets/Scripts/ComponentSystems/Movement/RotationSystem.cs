@@ -26,7 +26,7 @@ public class RotationSystem : ComponentSystem
     private Rotation CreaateRotationComponent()
     {
         Rotation rot = new Rotation();
-        rot.Value = quaternion.Euler(WeaponsConfig.PistolBulletRotation);
+        rot.Value = quaternion.Euler(PistolBulletConfig.Rotation);
         return rot;
     }
 }

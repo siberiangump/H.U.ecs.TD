@@ -4,7 +4,7 @@ using System;
 [Serializable]
 public struct Health : IComponentData
 {
-    public float Amount;
+    public int Amount;
 }
 
 public class HealthProxy : ComponentDataProxy<Health>

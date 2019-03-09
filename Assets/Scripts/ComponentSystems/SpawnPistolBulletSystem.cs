@@ -4,6 +4,7 @@ using Unity.Transforms;
 using Unity.Mathematics;
 using Assets.Scripts.Data.Movement;
 using Unity.Rendering;
+using Assets.Scripts.Data;
 
 public class SpawnPistolBulletSystem : ComponentSystem
 {
@@ -12,7 +13,7 @@ public class SpawnPistolBulletSystem : ComponentSystem
     protected override void OnCreateManager()
     {
         base.OnCreateManager();
-        BulletArchetype = EntityManager.CreateArchetype(typeof(RenderMeshProxy), typeof(Damage), typeof(Position), typeof(Rotation), typeof(Velocity), typeof(Scale));
+        BulletArchetype = EntityManager.CreateArchetype(typeof(RenderMeshProxy), typeof(Damage), typeof(Position), typeof(Rotation), typeof(Velocity), typeof(Scale), typeof(DestroyAt));
     }
 
     private struct PistolComponents
@@ -61,6 +62,7 @@ public class SpawnPistolBulletSystem : ComponentSystem
         Velocity vel = CreateVelocityComponent(i, j);
         Rotation rot = CreateRotationComponent();
         Scale scale = CreateScaleComponent();
+        DestroyAt destroy = CreateDestroyComponent();
 
         Entity bullet = comandBuffer.CreateEntity(BulletArchetype);
         comandBuffer.AddSharedComponent(bullet, WeaponsMeshes.BulletMeshProxy.Value);
@@ -69,12 +71,14 @@ public class SpawnPistolBulletSystem : ComponentSystem
         comandBuffer.SetComponent(bullet, vel);
         comandBuffer.SetComponent(bullet, rot);
         comandBuffer.SetComponent(bullet, scale);
-    }    
+        comandBuffer.SetComponent(bullet, destroy);
+    }
 
     private Damage CreateDamageComponent()
     {
         Damage damage = new Damage();
-        damage.Amount = WeaponsConfig.PistolBulletDamage;
+        damage.Amount = PistolBulletConfig.Damage;
+        damage.SqrDistance = PistolBulletConfig.SqrDistanceToTakeDamage;
         return damage;
     }
 
@@ -88,7 +92,7 @@ public class SpawnPistolBulletSystem : ComponentSystem
     private Velocity CreateVelocityComponent(int i, int j)
     {
         float3 velocity = SpawnPointInject.Pos[j].Value - PistolInject.Pos[i].Value;
-        velocity = math.normalize(velocity) * WeaponsConfig.PistolBulletSpeed;
+        velocity = math.normalize(velocity) * PistolBulletConfig.Speed;
         Velocity velocityComponent = new Velocity();
         velocityComponent.Value = velocity;
         return velocityComponent;
@@ -97,15 +101,22 @@ public class SpawnPistolBulletSystem : ComponentSystem
     private Rotation CreateRotationComponent()
     {
         Rotation rot = new Rotation();
-        rot.Value = quaternion.Euler(WeaponsConfig.PistolBulletRotation);
+        rot.Value = quaternion.Euler(PistolBulletConfig.Rotation);
         return rot;
     }
 
     private Scale CreateScaleComponent()
     {
         Scale scale = new Scale();
-        scale.Value = WeaponsConfig.PistolBulletScale;
+        scale.Value = PistolBulletConfig.Scale;
         return scale;
+    }
+
+    private DestroyAt CreateDestroyComponent()
+    {
+        DestroyAt destroy = new DestroyAt();
+        destroy.Remains = PistolBulletConfig.TimeToDestroy;
+        return destroy;
     }
 }
 

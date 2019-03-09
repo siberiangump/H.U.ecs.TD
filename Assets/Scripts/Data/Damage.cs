@@ -2,5 +2,6 @@
 
 public struct Damage : IComponentData
 {
-    public float Amount;
+    public int Amount;
+    public float SqrDistance;
 }
