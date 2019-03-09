@@ -17,12 +17,15 @@ public class MoveSystem : ComponentSystem
 
     protected override void OnUpdate()
     {
+        float deltaTime = Time.deltaTime;
         for (int i = 0; i < MoveInject.Length; i++)
         {
-            float3 newPosValue = MoveInject.Pos[i].Value + MoveInject.Vel[i].Value;
+            float3 movObjPos = MoveInject.Pos[i].Value;
+            float3 movObjVel = new float3(MoveInject.Vel[i].Value.x, 0, MoveInject.Vel[i].Value.z);
+            float3 newPosValue = movObjPos + movObjVel * deltaTime;
             Position newPos = new Position();
-            newPos.Value = newPosValue * Time.deltaTime;
-            MoveInject.Pos[i] = newPos ;
+            newPos.Value = newPosValue;
+            MoveInject.Pos[i] = newPos;
         }
     }
 }

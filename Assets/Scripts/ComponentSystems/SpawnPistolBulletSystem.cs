@@ -12,7 +12,7 @@ public class SpawnPistolBulletSystem : ComponentSystem
     protected override void OnCreateManager()
     {
         base.OnCreateManager();
-        BulletArchetype = EntityManager.CreateArchetype(typeof(RenderMeshProxy), typeof(Damage), typeof(Position), typeof(Velocity));
+        BulletArchetype = EntityManager.CreateArchetype(typeof(RenderMeshProxy), typeof(Damage), typeof(Position), typeof(Rotation), typeof(Velocity));
     }
 
     private struct PistolComponents
@@ -47,8 +47,8 @@ public class SpawnPistolBulletSystem : ComponentSystem
                 {
                     comandBuffer = Barrier.CreateCommandBuffer();
                     SpawnBullet(i, j);
-                                     
-                    comandBuffer.RemoveComponent<Fire>(PistolInject.Entities[i]);                 
+
+                    comandBuffer.RemoveComponent<Fire>(PistolInject.Entities[i]);
                 }
             }
         }
@@ -59,13 +59,15 @@ public class SpawnPistolBulletSystem : ComponentSystem
         Damage damage = CreateDamageComponent();
         Position position = CreatePositionComponent(j);
         Velocity vel = CreateVelocityComponent(i, j);
-        
+        Rotation rot = CreaateRotationComponent();
+
         Entity bullet = comandBuffer.CreateEntity(BulletArchetype);
         comandBuffer.AddSharedComponent(bullet, WeaponsMeshes.BulletMeshProxy.Value);
         comandBuffer.SetComponent(bullet, damage);
         comandBuffer.SetComponent(bullet, position);
         comandBuffer.SetComponent(bullet, vel);
-    }
+        comandBuffer.SetComponent(bullet, rot);
+    }    
 
     private Damage CreateDamageComponent()
     {
@@ -88,6 +90,13 @@ public class SpawnPistolBulletSystem : ComponentSystem
         Velocity velocityComponent = new Velocity();
         velocityComponent.Value = velocity;
         return velocityComponent;
+    }
+
+    private Rotation CreaateRotationComponent()
+    {
+        Rotation rot = new Rotation();
+        rot.Value = quaternion.Euler(WeaponsConfig.PistolBulletRotation);
+        return rot;
     }
 }
 
