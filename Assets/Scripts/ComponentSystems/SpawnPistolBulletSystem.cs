@@ -12,7 +12,7 @@ public class SpawnPistolBulletSystem : ComponentSystem
     protected override void OnCreateManager()
     {
         base.OnCreateManager();
-        BulletArchetype = EntityManager.CreateArchetype(typeof(RenderMeshProxy), typeof(Damage), typeof(Position), typeof(Rotation), typeof(Velocity));
+        BulletArchetype = EntityManager.CreateArchetype(typeof(RenderMeshProxy), typeof(Damage), typeof(Position), typeof(Rotation), typeof(Velocity), typeof(Scale));
     }
 
     private struct PistolComponents
@@ -59,7 +59,8 @@ public class SpawnPistolBulletSystem : ComponentSystem
         Damage damage = CreateDamageComponent();
         Position position = CreatePositionComponent(j);
         Velocity vel = CreateVelocityComponent(i, j);
-        Rotation rot = CreaateRotationComponent();
+        Rotation rot = CreateRotationComponent();
+        Scale scale = CreateScaleComponent();
 
         Entity bullet = comandBuffer.CreateEntity(BulletArchetype);
         comandBuffer.AddSharedComponent(bullet, WeaponsMeshes.BulletMeshProxy.Value);
@@ -67,6 +68,7 @@ public class SpawnPistolBulletSystem : ComponentSystem
         comandBuffer.SetComponent(bullet, position);
         comandBuffer.SetComponent(bullet, vel);
         comandBuffer.SetComponent(bullet, rot);
+        comandBuffer.SetComponent(bullet, scale);
     }    
 
     private Damage CreateDamageComponent()
@@ -92,11 +94,18 @@ public class SpawnPistolBulletSystem : ComponentSystem
         return velocityComponent;
     }
 
-    private Rotation CreaateRotationComponent()
+    private Rotation CreateRotationComponent()
     {
         Rotation rot = new Rotation();
         rot.Value = quaternion.Euler(WeaponsConfig.PistolBulletRotation);
         return rot;
+    }
+
+    private Scale CreateScaleComponent()
+    {
+        Scale scale = new Scale();
+        scale.Value = WeaponsConfig.PistolBulletScale;
+        return scale;
     }
 }
 
