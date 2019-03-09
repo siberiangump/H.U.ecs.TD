@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c901a5bdd393d34bacbf531d30bd68a, type: 3}
-  m_Name: WeaponsConfigSO
+  m_Name: PistolBulletConfigSO
   m_EditorClassIdentifier: 
-  PistolBulletDamage: 1
+  PistolBulletDamage: 10
   PistolBulletSpeed: 7
   PistolBulletRotation:
     x: 1.57
@@ -22,3 +22,5 @@ MonoBehaviour:
     x: 0.1
     y: 0.1
     z: 0.1
+  PistolBulletSqrDistance: 0.12
+  TimeToDestroy: 2

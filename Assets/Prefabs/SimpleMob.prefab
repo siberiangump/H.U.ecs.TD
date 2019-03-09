@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SerializedData:
-    Amount: 100
+    Amount: 110
 --- !u!114 &9119396967924126473
 MonoBehaviour:
   m_ObjectHideFlags: 0
