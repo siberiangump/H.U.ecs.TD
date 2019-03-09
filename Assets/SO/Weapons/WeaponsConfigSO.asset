@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PistolBulletDamage: 1
   PistolBulletSpeed: 1
+  PistolBulletRotation:
+    x: 45
+    y: 0
+    z: 0
+  PistolBulletScale:
+    x: 0
+    y: 0
+    z: 0
