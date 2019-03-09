@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: WeaponsConfigSO
   m_EditorClassIdentifier: 
   PistolBulletDamage: 1
-  PistolBulletSpeed: 1
+  PistolBulletSpeed: 7
   PistolBulletRotation:
-    x: 45
+    x: 1.57
     y: 0
     z: 0
   PistolBulletScale:
-    x: 0
-    y: 0
-    z: 0
+    x: 0.1
+    y: 0.1
+    z: 0.1
